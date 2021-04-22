@@ -1,0 +1,23 @@
+version: "3.4"
+
+services:
+  csgo:
+    image: cm2network/csgo
+    network_mode: host
+    environment:
+      - SRCDS_TOKEN=15F2B923EC57C1BC4610725C3C09890A
+      - SRCDS_PORT=31798
+      - SRCDS_TV_PORT=30798
+      - SRCDS_FPSMAX=300
+      - SRCDS_TICKRATE=128
+      - SRCDS_MAXPLAYERS=8
+      - SRCDS_STARTMAP="de_inferno"
+      - SRCDS_MAPGROUP="mg_active"
+      - SRCDS_GAMEMODE=1
+      - SRCDS_GAMETYPE=0
+      - SRCDS_HOSTNAME="NPZ server"
+    volumes:
+      - /home/hieu/csgo-server/data:/home/steam/csgo-dedicated/
+    ports:
+      - 31798:31798
+      - 30798:30798
